@@ -1,0 +1,67 @@
+<?php
+include ('header.html');
+?>	
+<link href="signin.css" rel="stylesheet">
+
+
+<!-- _______________________________________________________________________________________________
+								navbar quand erreur login -->
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <ul class="textured-gradient">
+
+          <a class="navbar-brand" href="index.php">Alhambra Palace</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="#contact">Nous contacter</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+         </ul>
+      </div>
+    </div>
+   </div>
+
+    <!-- _______________________________________________________________________________________________
+								formlogin quand erreur login -->			
+
+ <div class="container">
+
+      <form class="form-signin" role="form" action="validerLogin.php" method=post>
+       <h1 class="form-signin-heading">Connexion</h1>
+        <input type="text" id="login" name="login" class="form-control" placeholder="Login" required autofocus>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Envoyer</button>
+        
+      </form>
+
+    </div> 
+
+    <div class="alert alert-error hide">
+			<h4 class="alert-heading">Erreur !
+			<br/>
+		    Vous devez entrer au moins 4 caractures  pour le login! 
+			</h4>
+   </div>
+
+
+
+<script>
+	$( "form" ).submit(function( event ) {
+ 
+		if($("#login").val().length < 4){
+				$("#login").addClass("error");
+				$("div.alert").show("slow").delay(4000).hide("slow");
+				return false;
+			}
+
+		});
+
+
+
+ 
+</script>
+

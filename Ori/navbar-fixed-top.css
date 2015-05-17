@@ -1,0 +1,16 @@
+body {
+  min-height: 2000px;
+  padding-top: 50px;
+  color: #2B1100;
+  
+}
+
+.navbar .container {
+  width: auto;
+}
+
+.navbar-inverse {
+    background-color: #2B1100;
+}
+
+
