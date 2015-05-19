@@ -30,6 +30,23 @@ class clientManager
 			return $e;
 		}
 	}
+    public function getNomByID($id)
+    {
+
+        $requete=$this->_db->prepare('select NOM, PRENOM from client where NOCLIENT like :id');
+        $requete->bindValue(':id',$id);
+
+        try{
+            $requete->execute();
+            $result=$requete->fetch();
+           // var_dump($result);
+            return $result;
+        }
+        catch(error $e)
+        {
+            return $e;
+        }
+    }
 
 
 

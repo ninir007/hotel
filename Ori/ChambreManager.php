@@ -53,6 +53,26 @@ class ChambreManager
       return $e;
     }
   }
+    public function getLaChambre($chambre)
+    {
+        $requete=$this->_db->prepare('select * from chambre  where numero = :chambre');
+        $requete->bindValue(':chambre',$chambre);
+        try
+        {
+            $requete->execute();
+            $result=$requete->fetchAll(PDO::FETCH_BOTH);
+            $lesChambres=array();
+            foreach($result as $donnee)
+            {
+                $lesChambres[] = new Chambre($donnee);
+            }
+            return $lesChambres;
+        }
+        catch(error $e)
+        {
+            return $e;
+        }
+    }
   
   public function getListChambresReservableById_Modele($idModele, $dateArr, $dateDep, $bool_litbebe)
   {    

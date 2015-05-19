@@ -12,12 +12,14 @@ elseif($_SESSION['login']=="membre")
 
 $tarifManager=new TarifManager();
 $lesTarifs= $tarifManager->getSais();
+$_SESSION['modele']=$_GET['idmodele'];
 ?>
+
 <h1 class="page-header">Reservation modéle <?php echo $_GET['idmodele']?></h1>
 
 
 <!--TARIF-->
-<div class="col-xs-12 col-lg-4">
+<div class="col-xs-12 col-lg-4" id="infotarif">
     <div class="panel panel-default" style="background-color: rgba(41, 16, 0, 0.54)">
         <div class="panel-heading text-center" style="background-color: rgba(41, 16, 0, 0.54); color:#B6B6B6">Tarifs des saisons pour le modéle <?php echo $_GET['idmodele']?></div>
         <form id="modifTarifs" class="form-horizontal" role="form" action=javascript:modifierTarif(<?php echo count($lesTarifs) ?>) method=POST>
@@ -32,13 +34,14 @@ $lesTarifs= $tarifManager->getSais();
             }
             ?>
         </form>
-    </div>
+        </div>
 </div>
-<form class="form-inline well" id="form" action=javascript:checkReservable() method="post">
+
+<form id="form" action=javascript:checkReservable() method="post">
 <div class="col-xs-12 col-lg-2">
     <div class="panel panel-default ">
-        <div class="panel-heading text-center">Chambres séléctionnées</div>
-        <select class="form-control" id="idBodyChambres">
+        <div class="panel-heading text-center">Selectionner une chambre</div>
+        <select multiple class="form-control" id="idBodyChambres">
 
         </select>
     </div>
@@ -56,9 +59,15 @@ $lesTarifs= $tarifManager->getSais();
                 <br><center><input class="btn btn-default" type="submit" ></center>
 
         </div>
+    <span hidden id="reserok" class="alert-success">Traitement...</span>
+    <span hidden id="errchambre" class="alert-danger">Erreur : chambre pas disponible</span>
+    <span hidden id="errdate" class="alert-danger">Erreur : Hotel fermé</span>
     </div>
 </div>
+
+
 </form>
+
 
 
 
@@ -165,7 +174,10 @@ $lesTarifs= $tarifManager->getSais();
     function checkReservable() {
         var fin = $( "#dateFin" ).val().substring(6)+"-"+$( "#dateFin" ).val().substring(3,5)+"-"+$( "#dateFin" ).val().substring(0,2);
         var deb = $( "#dateDebut" ).val().substring(6)+"-"+$( "#dateDebut" ).val().substring(3,5)+"-"+$( "#dateDebut" ).val().substring(0,2);
-        var chamb = $( "#chambr:checked").val();
+        var chambrelit = $( "#chambr:checked").val();
+        var lachambre = chambrelit.split("/");
+        var chamb = lachambre[0];
+
 
         var donnees = "datein="+deb+"&dateout="+fin+"&chambre="+chamb;
         if(donnees == null)
@@ -177,13 +189,48 @@ $lesTarifs= $tarifManager->getSais();
         {
             if(xhr.readyState == 4 && xhr.status == 200)
             {
-                var result = xhr.responseText;
-                eval(result);
+                var machin = xhr.responseText;
+                var resultat = eval(machin);
+                alert(resultat[0]);
+                if(resultat[0] == 'chambre pas disponible')
+                {
+                    $('#errchambre').show();
+                    setTimeout(function(){
+                        $('#errchambre').hide();
+                    },3000);
+                }
+                else if(resultat[0] == 'hotel pas ouvert')
+                {
+                    $('#errdate').show();
+                    setTimeout(function(){
+                        $('#errdate').hide();
+                    },3000);
+                }
+                else
+                {
+                    $('#reserok').show();
+                    setTimeout(function(){
+                        $('#reserok').hide();
+                    },3000);
+                    location.href='recap.php';
+
+
+
+
+
+
+                }
             }
-        }
+            else{
+
+            }
+        };
         xhr.open("POST","validerDate.php",true);
         xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
         xhr.send(donnees);
 
     }
+
+
+
 </script>

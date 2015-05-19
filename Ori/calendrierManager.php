@@ -111,4 +111,34 @@ class calendrierManager {
 
 
     }
+    public function getCodeTarifBySejour($dateDebut,$dateFin)
+    {
+
+        $requete=$this->_db->prepare('SELECT * FROM calendrier WHERE datej>= :dateDebut AND datej < :dateFin');
+        $requete->bindValue(':dateDebut',$dateDebut);
+        $requete->bindValue(':dateFin',$dateFin);
+        try {
+
+
+
+            $requete->execute();
+            //PDOStatement::fetchAll() — Retourne un tableau contenant toutes les lignes du jeu d'enregistrements.
+            //Le tableau représente chaque ligne comme soit un tableau de valeurs des colonnes, soit un objet avec des propriétés correspondant à chaque nom de colonne.
+            $result=$requete->fetchAll(PDO::FETCH_BOTH);
+            $lesJours=array();
+            foreach($result as $donnee)
+            {
+
+                $lesJours[]=new calendrier($donnee);
+
+            }
+            return $lesJours;
+        }
+        catch(error $e)
+        {
+            return $e;
+        }
+
+
+    }
 }

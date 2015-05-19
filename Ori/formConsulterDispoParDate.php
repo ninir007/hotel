@@ -20,7 +20,8 @@ require_once('header.html');
 
 <div class="container marketing">
 <div class="col-md-9" role="main">
-	<div class="bs-example">
+    <div class="panel panel-default" style="background-color: rgba(41, 16, 0, 0.54)">
+        <div class="panel-heading text-center" style="background-color: rgba(41, 16, 0, 0.54); color:#B6B6B6">Vérifier Disponibilé</div>
 			<form class="form-signin" role="form" action="listeChambresDispo.php" method=post>
 
 
@@ -56,7 +57,7 @@ require_once('header.html');
 				
 
 			</form>
-    </div>
+</div>
 </div>
 </div>
 
