@@ -14,7 +14,7 @@ if(count($lesChambres) > 0 )
     $j=0;
     foreach ($lesChambres as $chambre)
     {
-        $result[0][$j]="<tr class=\"selected\"><td>".$chambre->getNumero()."</td></tr>";
+        $result[0][$j]="<option id=\"chambr\">".$chambre->getNumero()."</option>";
         $j++;
     }
 }

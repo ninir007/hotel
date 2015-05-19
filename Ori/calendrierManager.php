@@ -66,6 +66,49 @@ class calendrierManager {
             
             
         }
-}
+    public function reservable($chambre,$dateDebut,$dateFin)
+    {
 
-?>
+
+
+        $requete=$this->_db->prepare('select chambre_reservable(:chambre,:dateDebut,:dateFin)');
+        $requete->bindValue(':dateDebut',$dateDebut);
+        $requete->bindValue(':dateFin',$dateFin);
+        $requete->bindValue(':chambre',$chambre);
+        try{
+
+            $requete->execute();
+            $result=$requete->fetch(PDO::FETCH_BOTH);
+            return $result;
+        }
+        catch(error $e)
+        {
+            return $e;
+        }
+
+
+    }
+
+    public function reserver($noclient,$dateDebut,$dateFin)
+    {
+
+
+
+        $requete=$this->_db->prepare('select ajout_reservation(:noclient,:dateDebut,:dateFin)');
+        $requete->bindValue(':dateDebut',$dateDebut);
+        $requete->bindValue(':dateFin',$dateFin);
+        $requete->bindValue(':noclient',$noclient);
+        try{
+
+            $requete->execute();
+            $result=$requete->fetch();
+            return $result;
+        }
+        catch(error $e)
+        {
+            return $e;
+        }
+
+
+    }
+}

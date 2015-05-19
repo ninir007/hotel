@@ -140,7 +140,7 @@ elseif($_SESSION['login']=="membre")
                     }
                 }
                 else
-                { // XMLHttpRequest non support� par le navigateur
+                { // XMLHttpRequest non supporté par le navigateur
                     alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
                     xhr = false;
                 }

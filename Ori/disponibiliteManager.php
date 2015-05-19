@@ -27,8 +27,7 @@ class DisponibiliteManager {
                 $requete->execute();
 		//PDOStatement::fetchAll() — Retourne un tableau contenant toutes les lignes du jeu d'enregistrements.
                  //Le tableau représente chaque ligne comme soit un tableau de valeurs des colonnes, soit un objet avec des propriétés correspondant à chaque nom de colonne. 
-		$result=$requete->fetchAll(PDO::FETCH_BOTH);
-                var_dump($result);
+		    $result=$requete->fetchAll(PDO::FETCH_BOTH);
                 $lesDispo=array();
 			foreach($result as $donnee)
 				{

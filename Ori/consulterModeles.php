@@ -76,6 +76,13 @@ include('nav_membr.html');
         <div class="col-md-5">
           <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500" src="images/hamb2.jpg">
         </div>
+          <?php
+          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
+              ?>
+              <div class="col-lg-2 col-lg-offset-5">
+                  &nbsp; <p><a class="btnshow btn btn-default" rel="1" role="button">Reserver</a></p>
+              </div>
+          <?php } ?>
       </div>
 
       <hr class="featurette-divider" id="2">
@@ -88,6 +95,13 @@ include('nav_membr.html');
           <h2 class="featurette-heading" >Chambre Superieur. <span class="text-muted">Intimité.</span></h2>
           <p class="lead">Conçues sur mesure pour s'adapter à vos besoins, les Suites Premier apporteront un sentiment de bien-être résidentiel instantané. Equipées des meilleures technologies tout en apportant toute l'intimité d'un pied-à-terre.</p>
         </div>
+          <?php
+          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
+              ?>
+              <div class="col-lg-2 col-lg-offset-5">
+                  &nbsp; <p><a class="btnshow btn btn-default" rel="2" role="button">Reserver</a></p>
+              </div>
+          <?php } ?>
       </div>
 
       <hr class="featurette-divider" id="3">
@@ -100,6 +114,13 @@ include('nav_membr.html');
         <div class="col-md-5">
           <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb3.jpg">
         </div>
+          <?php
+          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
+              ?>
+              <div class="col-lg-2 col-lg-offset-5">
+                  &nbsp; <p><a class="btnshow btn btn-default" rel="3" role="button">Reserver</a></p>
+              </div>
+          <?php } ?>
       </div>
 
       <hr class="featurette-divider" id="4">
@@ -107,12 +128,20 @@ include('nav_membr.html');
 
       <div class="row featurette" >
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb1.jpg">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb1-1.jpg">
         </div>
+          <p>&nbsp;</p>
         <div class="col-md-7">
           <h2 class="featurette-heading" >Suite Marco Polo. <span class="text-muted">Historique.</span></h2>
           <p class="lead">Baigné de lumière naturelle, l'intérieur se pare, dans l'esprit thématique, de tissus d'ameublement en soie, sublimés d'antiquités raffinées, de chandeliers de cristal et de cheminées décoratives.</p>
         </div>
+          <?php
+          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
+              ?>
+              <div class="col-lg-2 col-lg-offset-5">
+                  &nbsp; <p><a class="btnshow btn btn-default" rel="4" role="button">Reserver</a></p>
+              </div>
+          <?php } ?>
       </div>
 
       <hr class="featurette-divider" id="5">
@@ -121,10 +150,21 @@ include('nav_membr.html');
         <div class="col-md-7">
           <h2 class="featurette-heading" >Suite Superieur. <span class="text-muted">Vivez l'expérience du luxe.</span></h2>
           <p class="lead">Ressourcez-vous dans la salle de bains en marbre, et laissez le confort de cette Suite satisfaire toutes vos exigeances.</p>
+
+
+
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb3.jpg">
+
         </div>
+          <?php
+          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
+              ?>
+              <div class="col-lg-2 col-lg-offset-5">
+                  &nbsp; <p><a class="btnshow btn btn-default" rel="5" role="button">Reserver</a></p>
+              </div>
+          <?php } ?>
       </div>
 
       <hr class="featurette-divider" id="6">
@@ -182,11 +222,17 @@ include('nav_membr.html');
         <div class="col-md-7" >
           <h2 class="featurette-heading">Suite Al Hambra. <span class="text-muted"><br>Raffinement.</span></h2>
           <p class="lead">Véritable appartement, la Suite Al Hambra respire le chic contemporain. Au sommet de la tour des Dames, cette suite offre une vue à couper le souffle.</p>
-        
-          <div class="btn-group btn-group-xs">
-             &nbsp; <p><a class="btn btn-default" href="#" role="button">Reserver</a></p> 
-            </div>
+
         </div>
+          <?php
+          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
+              ?>
+              <div class="col-lg-2 col-lg-offset-5">
+                  &nbsp; <p><a class="btnshow btn btn-default" rel="6" role="button">Reserver</a></p>
+              </div>
+          <?php } ?>
+
+
 
 
       </div>
@@ -197,3 +243,17 @@ include('nav_membr.html');
 
 
           </div><!-- /.container -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        handleReservation();
+    });
+
+
+function handleReservation() {
+    $('.btnshow').click( function() {
+        var model = $(this).attr('rel');
+        location.href='formReserver.php?idmodele='+model;
+});
+
+}
+</script>
