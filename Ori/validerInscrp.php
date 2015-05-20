@@ -2,7 +2,7 @@
 <?php
 	spl_autoload_register();
 	//print_r($_POST);
-if($_POST['login']==-'admin')
+if($_POST['login']== 'admin')
 {
     include('header.html');
     include('nav_consulter.html');

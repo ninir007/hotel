@@ -68,11 +68,12 @@ class ReservationManager
             return $e;
         }
     }
-    public function updateReservation($noreservation,$prix,$acompte,$dateacompte)
+    public function updateReservation($noreservation,$prix,$acompte,$dateacompte,$bebe)
     {
-        $requete=$this->_db->prepare('UPDATE reservation SET PRIXTOTAL = :prix, ACOMPTE_DEMANDE = :acompte, DATE_LIMITEACOMPTE = :dateacompte WHERE NORESERVATION = :noreservation');
+        $requete=$this->_db->prepare('UPDATE reservation SET PRIXTOTAL = :prix, ACOMPTE_DEMANDE = :acompte, NBRE_BEBE = :bebe, DATE_LIMITEACOMPTE = :dateacompte WHERE NORESERVATION = :noreservation');
         $requete->bindValue(':noreservation',$noreservation);
         $requete->bindValue(':prix',$prix);
+        $requete->bindValue(':bebe',$bebe);
         $requete->bindValue(':acompte',$acompte);
         $requete->bindValue(':dateacompte',$dateacompte);
         try

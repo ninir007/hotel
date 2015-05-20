@@ -67,183 +67,55 @@ include('nav_membr.html');
 
 
 <div class="container marketing">
-
-      <div class="row featurette" >
-        <div class="col-md-7"  >
-          <h2 class="featurette-heading">Chambre Premier. <span class="text-muted">Simplicité et tranquilité.</span></h2>
-          <p class="lead">Elégamment conçues, les chambres Premier offrent tout le confort qu'un hôte puisse imaginer : linge de lit délicat, espaces salon confortables, salles de bain en marbre, sans oublier les vues sur la paisible cour intérieure.</p>
+    <div class='row featurette' >
+        <div class='col-md-7'  >
+            <h2 class='featurette-heading'>Chambre Premier. <span class='text-muted'>Simplicité et tranquilité.</span></h2>
+            <p class='lead'>Elégamment conçues, les chambres Premier offrent tout le confort qu'un hôte puisse imaginer : linge de lit délicat, espaces salon confortables, salles de bain en marbre, sans oublier les vues sur la paisible cour intérieure.</p>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500" src="images/hamb2.jpg">
+        <div class='col-md-5'>
+            <img class='featurette-image img-responsive' data-src='holder.js/500x500/auto' alt='500x500' src='images/hamb1.jpg'>
         </div>
-          <?php
-          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
-              ?>
-              <div class="col-lg-2 col-lg-offset-5">
-                  &nbsp; <p><a class="btnshow btn btn-default" rel="1" role="button">Reserver</a></p>
-              </div>
-          <?php } ?>
-      </div>
-
-      <hr class="featurette-divider" id="2">
-
-      <div class="row featurette" >
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb1.jpg">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading" >Chambre Superieur. <span class="text-muted">Intimité.</span></h2>
-          <p class="lead">Conçues sur mesure pour s'adapter à vos besoins, les Suites Premier apporteront un sentiment de bien-être résidentiel instantané. Equipées des meilleures technologies tout en apportant toute l'intimité d'un pied-à-terre.</p>
-        </div>
-          <?php
-          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
-              ?>
-              <div class="col-lg-2 col-lg-offset-5">
-                  &nbsp; <p><a class="btnshow btn btn-default" rel="2" role="button">Reserver</a></p>
-              </div>
-          <?php } ?>
-      </div>
-
-      <hr class="featurette-divider" id="3">
-
-      <div class="row featurette" >
-        <div class="col-md-7">
-          <h2 class="featurette-heading" >Chambre Grand Deluxe. <span class="text-muted"> Spacieuse et luxueuse.</span></h2>
-          <p class="lead">Meublée avec chic dans le style contemporain, elle dispose du service Alhambra, d'une technologie de pointe, d'un système audiovisuel hors pair et de la connexion haut débit.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb3.jpg">
-        </div>
-          <?php
-          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
-              ?>
-              <div class="col-lg-2 col-lg-offset-5">
-                  &nbsp; <p><a class="btnshow btn btn-default" rel="3" role="button">Reserver</a></p>
-              </div>
-          <?php } ?>
-      </div>
-
-      <hr class="featurette-divider" id="4">
-
-
-      <div class="row featurette" >
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb1-1.jpg">
-        </div>
-          <p>&nbsp;</p>
-        <div class="col-md-7">
-          <h2 class="featurette-heading" >Suite Marco Polo. <span class="text-muted">Historique.</span></h2>
-          <p class="lead">Baigné de lumière naturelle, l'intérieur se pare, dans l'esprit thématique, de tissus d'ameublement en soie, sublimés d'antiquités raffinées, de chandeliers de cristal et de cheminées décoratives.</p>
-        </div>
-          <?php
-          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
-              ?>
-              <div class="col-lg-2 col-lg-offset-5">
-                  &nbsp; <p><a class="btnshow btn btn-default" rel="4" role="button">Reserver</a></p>
-              </div>
-          <?php } ?>
-      </div>
-
-      <hr class="featurette-divider" id="5">
-
-      <div class="row featurette" >
-        <div class="col-md-7">
-          <h2 class="featurette-heading" >Suite Superieur. <span class="text-muted">Vivez l'expérience du luxe.</span></h2>
-          <p class="lead">Ressourcez-vous dans la salle de bains en marbre, et laissez le confort de cette Suite satisfaire toutes vos exigeances.</p>
-
-
-
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="images/hamb3.jpg">
-
-        </div>
-          <?php
-          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
-              ?>
-              <div class="col-lg-2 col-lg-offset-5">
-                  &nbsp; <p><a class="btnshow btn btn-default" rel="5" role="button">Reserver</a></p>
-              </div>
-          <?php } ?>
-      </div>
-
-      <hr class="featurette-divider" id="6">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel"  class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators" >
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="./images/chamb/Suite Royale/1.jpg" alt="First slide" height="600">
-          <div class="container">
-            <div class="carousel-caption">
-              
+        <?php
+        if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
+            ?>
+            <div class='col-lg-2 col-lg-offset-5'>
+                &nbsp; <p><a class='btnshow btn btn-default' rel='1' role='button'>Reserver</a></p>
             </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="./images/chamb/Suite Royale/2.jpg" alt="Second slide" height="600">
-          <div class="container">
-            <div class="carousel-caption">
-              
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="./images/chamb/Suite Royale/3.jpg" alt="Third slide" height="600">
-          <div class="container">
-            <div class="carousel-caption">
-              
-            </div>
-          </div>
-        </div>
-
-       
+        <?php } ?>
+    </div>
 
 
+<?php
+$i=2;
+foreach($lesModeles as $modele)
+{
+    if(($modele->getId_Modele() != 1)){
+    echo "<hr class='featurette-divider' id='".$i."'>";
+    echo file_get_contents("./content/".$i.".txt");
+    echo "<div class='col-md-5'>
+            <img class='featurette-image img-responsive' data-src='holder.js/500x500/auto' alt='500x500' src='images/hamb".$i.".jpg'>
+        </div>";
 
-      </div>
+    if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {  ?>
 
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
+                     <div class='col-lg-2 col-lg-offset-5'>
+                      &nbsp; <p><a class='btnshow btn btn-default' rel='<?php echo $i?>' role='button'>Reserver</a></p>
+                     </div>
+    <?php  }
+    echo "</div>";
+
+ $i++;
+    }
+}
+ ?>
 
 
-        </div>
-        <div class="col-md-7" >
-          <h2 class="featurette-heading">Suite Al Hambra. <span class="text-muted"><br>Raffinement.</span></h2>
-          <p class="lead">Véritable appartement, la Suite Al Hambra respire le chic contemporain. Au sommet de la tour des Dames, cette suite offre une vue à couper le souffle.</p>
-
-        </div>
-          <?php
-          if(isset($_SESSION['login']) && $_SESSION['login'] == 'membre') {
-              ?>
-              <div class="col-lg-2 col-lg-offset-5">
-                  &nbsp; <p><a class="btnshow btn btn-default" rel="6" role="button">Reserver</a></p>
-              </div>
-          <?php } ?>
+</div><!-- /.container -->
 
 
 
 
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-          </div><!-- /.container -->
-<script type="text/javascript">
+<script type='text/javascript'>
     $(document).ready(function(){
         handleReservation();
     });

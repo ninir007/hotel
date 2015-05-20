@@ -1,0 +1,5 @@
+<div class='row featurette' >
+                    <div class='col-md-7'  >
+          <h2 class='featurette-heading'>Suite Al Hambra. <span class='text-muted'><br>Raffinement.</span></h2>
+          <p class='lead'>Véritable appartement, la Suite Al Hambra respire le chic contemporain. Au sommet de la tour des Dames, cette suite offre une vue à couper le souffle.</p>
+                    </div>

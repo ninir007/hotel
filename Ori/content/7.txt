@@ -1,0 +1,5 @@
+<div class='row featurette' >
+                    <div class='col-md-7'  >
+          <h2 class='featurette-heading' >Chambre Superieur. <span class='text-muted'>Intimité.</span></h2>
+          <p class='lead'>Conçues sur mesure pour s'adapter à vos besoins, les Suites Premier apporteront un sentiment de bien-être résidentiel instantané. Equipées des meilleures technologies tout en apportant toute l'intimité d'un pied-à-terre.</p>
+                    </div>

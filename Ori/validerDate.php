@@ -20,6 +20,7 @@ $_SESSION['lit'] = $ko;
 $_SESSION['in'] = $dateArr;
 $_SESSION['out'] = $dateDep;
 $_SESSION['somme'] = 0;
+$_SESSION['sommeLit'] = 0;
 //DEBUT -------VERIF DATE, DISPO CHAMBRE
 $calendrierManager = new CalendrierManager();
 $result = $calendrierManager->reservable($chambre,$dateArr,$dateDep);
@@ -53,9 +54,24 @@ if($result[0] == "1") {
                     $_SESSION['tarif'][$i] = $tarif->getCode_tarif();
                     $i++;
                 }
+
                 $prixmanager = new PrixManager();
                 $tarification = $prixmanager->getListById_Modele($_SESSION['modele']);
-                $_SESSION['somme'] = 0;
+
+                //sejour avec lit bebe
+                if($_SESSION['lit'] == 1) {
+                    $tarifmanager = new tarifManager();
+                    $leslits = $tarifmanager->getSais();
+                    foreach($leslits as $lit){
+                        $prixlitbebe = $lit->getPrixLitBebe();
+                        $code = $lit->getCodeTarif();
+                        for($i=0;$i< count($_SESSION['tarif']);$i++) {
+                            if($_SESSION['tarif'][$i] == $code){
+                                $_SESSION['sommeLit'] += $prixlitbebe ;
+                            }
+                        }
+                    }
+                }
                 foreach($tarification as $prix){
                     $prixParJour = $prix->getPrix();
                     $codeTarif = $prix->getCodeTarif();

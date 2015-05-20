@@ -26,10 +26,12 @@ $reservations = $reservationManager->getReservationsByClient($_SESSION['id']);
                                 <table class="table table-bordered">
                                     <thead>
                                     <tr >
+                                        <th>Num</th>
                                         <th>Date</th>
-                                        <th>Numéro</th>
+
                                         <th>Date arrivé</th>
                                         <th>Date départ</th>
+                                        <th>Chambre</th>
                                         <th>Prix total</th>
                                         <th>Acompte</th>
                                         <th>Date limite versement</th>
@@ -40,10 +42,11 @@ $reservations = $reservationManager->getReservationsByClient($_SESSION['id']);
   foreach($reservations as $reservation)
   {
       echo "<tr style='text-align: center;'>";
-      echo "<td>".$reservation->getDate_Reservation()."</td>";
       echo "<td>".$reservation->getNo_Reservation()."</td>";
+      echo "<td>".$reservation->getDate_Reservation()."</td>";
       echo "<td>".$reservation->getDate_Arrivee()."</td>";
       echo "<td>".$reservation->getDate_Depart()."</td>";
+      echo "<td>".$reservationManager->getChambreByReserv($reservation->getNo_Reservation())[0]."</td>";
       echo "<td>".$reservation->getPrixtotal()." &#8364</td>";
       echo "<td>".$reservation->getAcompte_Demande()." &#8364</td>";
       echo "<td>".$reservation->getDate_Limite_Acompte()."</td>";

@@ -1,0 +1,5 @@
+<div class='row featurette' >
+                    <div class='col-md-7'  >
+          <h2 class='featurette-heading' >Chambre Royal. <span class='text-muted'> Hors de prix.</span></h2>
+          <p class='lead'>Meublée avec chic dans le style contemporain, elle dispose du service Alhambra, d'une technologie de pointe, d'un système audiovisuel hors pair et de la connexion haut débit.</p>
+                    </div>

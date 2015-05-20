@@ -114,7 +114,7 @@ class calendrierManager {
     public function getCodeTarifBySejour($dateDebut,$dateFin)
     {
 
-        $requete=$this->_db->prepare('SELECT * FROM calendrier WHERE datej>= :dateDebut AND datej < :dateFin');
+        $requete=$this->_db->prepare('SELECT * FROM calendrier WHERE datej>= :dateDebut AND datej <= :dateFin');
         $requete->bindValue(':dateDebut',$dateDebut);
         $requete->bindValue(':dateFin',$dateFin);
         try {

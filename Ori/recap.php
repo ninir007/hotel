@@ -9,7 +9,10 @@ elseif($_SESSION['login']=="admin")
 elseif($_SESSION['login']=="membre")
     include('nav_membr.html');
 if(isset($_SESSION['tarif'])){
-    $_SESSION['acompte'] = $_SESSION['somme']*0.1;
+
+    $_SESSION['sommetotal'] = $_SESSION['sommeLit'] + $_SESSION['somme'];
+
+    $_SESSION['acompte'] = $_SESSION['sommetotal']*0.1;
 ?>
 <div id="recap" class="container">
     <div class="col-sm-12 col-md-8 col-md-offset-2">
@@ -21,9 +24,14 @@ if(isset($_SESSION['tarif'])){
                 <li>Chambre : <span id="li_nbrechambre"> <?php echo $_SESSION['chambre'] ?> </span></li>
                 <li>Date checkin : <span id="li_datein"> <?php print_r($_SESSION['in']) ?> </span></li>
                 <li>Date checkout : <span id="li_dateout"> <?php  print_r($_SESSION['out']) ?> </span></li>
-                <li>Prix total TTC : <span id="li_prix"> <?php print_r($_SESSION['somme']) ?> </span> €</li>
+                <li>Prix total : <span id="li_prix"> <?php print_r($_SESSION['sommetotal']) ?> </span> €</li>
                 <li>Acompte à verser : <span id="li_acompte"> <?php print_r($_SESSION['acompte']) ?> </span> €</li>
                 <li>Avant le : <span id="li_date_limite_acompte"> <?php  print_r($_SESSION['in']) ?> </span></li>
+                <br>
+                <li class="dropdown-header">Details des prix pour le sejour</li>
+                <li>Prix  chambre: <span id="li_prix"> <?php print_r($_SESSION['somme']) ?> </span> €</li>
+                <li>Prix lit bébé : <span id="li_prix"> <?php print_r($_SESSION['sommeLit']) ?> </span> €</li>
+
             </ul>
 
 

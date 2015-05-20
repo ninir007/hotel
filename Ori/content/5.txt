@@ -1,0 +1,5 @@
+<div class='row featurette' >
+                    <div class='col-md-7'  >
+          <h2 class='featurette-heading' >Suite Superieur. <span class='text-muted'>Vivez l'expérience du luxe.</span></h2>
+          <p class='lead'>Ressourcez-vous dans la salle de bains en marbre, et laissez le confort de cette Suite satisfaire toutes vos exigeances.</p>
+                    </div>
